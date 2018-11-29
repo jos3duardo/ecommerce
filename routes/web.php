@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\User;
+use App\Endereco;
+
 
 Route::get('/','HomeController@index')->name('home');   
 
@@ -39,3 +42,34 @@ Route::post('/product', 'ProductController@store');
 Route::get('/product/edit/{id}', 'ProductController@edit');
 Route::post('/product/{id}', 'ProductController@update');
 Route::get('/product/delete/{id}', 'ProductController@destroy');
+
+
+//listando usuarios por endereço
+Route::get('/users', function (){
+    $users = User::all();
+    foreach ($users as $u) {
+        echo "<p> ID: ".$u->id."</p>";
+        echo "<p> Nome: ".$u->name."</p>";
+        echo "<p> Email: ".$u->email."</p>";
+        echo "<p> Rua: ".$u->endereco->rua."</p>";
+        echo "<p> Numero: ".$u->endereco->numero."</p>";
+        echo "<p> Bairro: ".$u->endereco->bairro."</p>";
+        echo "<p> Cidade: ".$u->endereco->cidade."</p>";
+        echo "<p> UF: ".$u->endereco->uf."</p>";
+        echo "<p> CEP: ".$u->endereco->cep."</p>";
+
+    }
+});
+
+Route::get('/enderecos', function (){
+    $ends = Endereco::all();
+    foreach ($ends as $end) {
+        echo "<p> ID do Cliente: ".$end->user_id."</p>";
+        echo "<p> Rua: ".$end->rua."</p>";
+        echo "<p> Numero: ".$end->numero."</p>";
+        echo "<p> Bairro: ".$end->bairro."</p>";
+        echo "<p> Cidade: ".$end->cidade."</p>";
+        echo "<p> UF: ".$end->uf."</p>";
+        echo "<p> CEP: ".$end->cep."</p>";
+    }
+});

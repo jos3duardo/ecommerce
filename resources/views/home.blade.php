@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -18,25 +18,37 @@
                                 <tr>
                                     <th>id</th>
                                     <th>Nome</th>
-                                    
+                                    <th> Email </th>
+                                    <th> Rua</th>
+                                    <th> Numero</th>
+                                    <th> Bairro</th>
+                                    <th> Cidade</th>
+                                    <th> UF</th>
+                                    <th> CEP</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $c)
+                                @foreach ($users as $u)
                                 <tr>
-                                    <td>{{ $c->id }}</td>
-                                    <td>{{ $c->name }}</td>
-                                   
+                                    <td>{{ $u->id }}</td>
+                                    <td>{{ $u->name }}</td>
+                                    <th>{{ $u->email }}</th>
+                                    <th>{{ $u->endereco->rua }}</th>
+                                    <th>{{ $u->endereco->numero}}</th>
+                                    <th>{{ $u->endereco->bairro}}</th>
+                                    <th>{{ $u->endereco->cidade}}</th>
+                                    <th>{{ $u->endereco->uf}}</th>
+                                    <th>{{ $u->endereco->cep}}</th>
                                     <td>
-                                        <a href="/editar/{{$c->id}}" class="btn btn-sm btn-info">Editar</a>
-                                        <a href="/deletar/{{$c->id}}" class="btn btn-sm btn-danger">Deletar</a>
+                                        <a href="/editar/{{$u->id}}" class="btn btn-sm btn-info">Editar</a>
+                                        <a href="/deletar/{{$u->id}}" class="btn btn-sm btn-danger">Deletar</a>
                                     </td>
                                 </tr>   
                                 @endforeach
                             </tbody>
             
                         </table>
-                    You are logged in!
+                    
                 </div>
             </div>
         </div>
