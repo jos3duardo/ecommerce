@@ -74,7 +74,6 @@ class CategoryController extends Controller
             return view('editcategory', compact('cat'));
         }
         return view('/category');
-
     }
 
     /**

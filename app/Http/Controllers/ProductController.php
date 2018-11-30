@@ -70,9 +70,14 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(product $product)
+    public function edit(product $product, $id)
     {
-        //
+        //buscar o produto que vai ser editado
+         $prod = Product::find($id);
+         if(isset($prod)){
+             return view('editproduct', compact('prod'));
+         }
+         return view('/produtct');
     }
 
     /**
@@ -82,9 +87,20 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, product $product)
+    public function update(Request $request, product $product, $id)
     {
-        //
+        //buscar a categoria que vai ser editada
+        $prod = Product::find($id);
+
+        if(isset($prod)){
+            $prod->name = $request->input('nomeProduto');
+            $prod->unidade = $request->input('unidadeProduto');
+            $prod->estoque = $request->input('estoqueProduto');
+            $prod->valor = $request->input('valorProduto');
+            //$prod->category_id = $request->input('categoriaProduto');
+            $prod->save();
+        }
+        return redirect('/product');
     }
 
     /**
@@ -93,8 +109,14 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(product $product, $id)
     {
-        //
+         //apaga uma categoria
+         $prod = Product::find($id);
+         if(isset($prod)){
+             $prod->delete();
+         }
+        return redirect('/product');
+       
     }
 }
