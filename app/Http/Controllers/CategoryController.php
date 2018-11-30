@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Category; // importa o modelo
 use Illuminate\Http\Request;
-// importa o modelo
-use App\Category;
 
 class CategoryController extends Controller
 {
+    //exige que o usuario esteja autenticado para acessar o controller
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,20 +22,6 @@ class CategoryController extends Controller
     {
         $cats = Category::all();
         return view('/category', compact('cats'));
-      
-    }
-
-    public function calendar()
-    {
-        return view('calendar');
-    }
-
-    public function categoryJson()
-    {
-        $cats = Category::with('produtos')->get(
-            
-        );
-        return $cats->toJson();
     }
 
     /**
@@ -108,7 +94,6 @@ class CategoryController extends Controller
             $cat->save();
         }
         return redirect('/category');
-
     }
 
     /**
@@ -126,4 +111,19 @@ class CategoryController extends Controller
         }
         return redirect('/category');
     }
+
+
+    public function calendar()
+    {
+        return view('calendar');
+    }
+
+    public function categoryJson()
+    {
+        $cats = Category::with('produtos')->get(
+            
+        );
+        return $cats->toJson();
+    }
+
 }

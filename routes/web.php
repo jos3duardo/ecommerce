@@ -35,9 +35,9 @@ Route::get('/category/delete/{id}', 'CategoryController@destroy');
 //Json com todas as categorias
 Route::get('/categoryJson', 'CategoryController@categoryJson');
 
-
 Route::get('/calendar', 'CategoryController@calendar')->name('calendar');
 
+//CRUD produtos
 Route::get('/product', 'ProductController@index')->name('product');
 Route::get('/product/new', 'ProductController@create');
 Route::post('/product', 'ProductController@store');
@@ -45,6 +45,7 @@ Route::post('/product', 'ProductController@store');
 Route::get('/product/edit/{id}', 'ProductController@edit');
 Route::post('/product/{id}', 'ProductController@update');
 Route::get('/product/delete/{id}', 'ProductController@destroy');
+
 
 
 //listando usuarios por endereço

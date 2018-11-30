@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    //exige que o usuario esteja autenticado para acessar o controller
     public function __construct()
     {
-        
         $this->middleware('auth');
     }
 
@@ -42,7 +42,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //recebe os dados do formulario
+        $prod = new Product();
+        $prod->name = $request->input('nomeProduto');
+        $prod->unidade = $request->input('unidadeProduto');
+        $prod->estoque = $request->input('estoqueProduto');
+        $prod->valor = $request->input('valorProduto');
+        $prod->category_id = $request->input('categoriaProduto');
+        $prod->save();
+        return redirect('/product');
     }
 
     /**

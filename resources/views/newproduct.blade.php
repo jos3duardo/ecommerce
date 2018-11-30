@@ -12,8 +12,8 @@
                     <input type="text" class="form-control" name="unidadeProduto" id="unidadeProduto" placeholder="Unidade">
                     <label for="estoqueProduto">Estoque</label>
                     <input type="text" class="form-control" name="estoqueProduto" id="estoqueProduto" placeholder="Estoque">
-                    <label for="estoqueProduto">Valor</label>
-                    <input type="text" class="form-control" name="estoqueProduto" id="estoqueProduto" placeholder="Valor">
+                    <label for="valorProduto">Valor</label>
+                    <input type="text" class="form-control" name="valorProduto" id="valorProduto" placeholder="Valor">
                     <label for="categoriaProduto">Categoria</label>
                     <input type="text" class="form-control" name="categoriaProduto" id="categoriaProduto"  >
                 </div>
