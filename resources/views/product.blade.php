@@ -3,7 +3,7 @@
 <div class="content">
   <div class="card border">
       <div class="card-body">
-          <h5 class="card-title">Cadastro de Produts</h5>
+          <h4 class="card-title">Cadastro de Produtos</h4>
           @if (count($prods) > 0)
               <table class="table table-hover table-dark">
                   <thead>
@@ -36,6 +36,16 @@
               </table>
           @endif
       </div>
+
+      <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="582CD7162121A728841F7FB6C4B96739" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-laranja-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
       <div class="card-footer">
           <a href="/product/new" class="btn btn-sn btn-primary" role="button">Novo Produto</a>
       </div>

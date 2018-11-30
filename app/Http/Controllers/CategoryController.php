@@ -27,13 +27,14 @@ class CategoryController extends Controller
 
     public function calendar()
     {
-       
         return view('calendar');
     }
 
     public function categoryJson()
     {
-        $cats = Category::with('produtos')->get();
+        $cats = Category::with('produtos')->get(
+            
+        );
         return $cats->toJson();
     }
 
@@ -103,7 +104,7 @@ class CategoryController extends Controller
         $cat = Category::find($id);
 
         if(isset($cat)){
-            $cat->nome = $request->input('nomeCategoria');
+            $cat->name = $request->input('nomeCategoria');
             $cat->save();
         }
         return redirect('/category');

@@ -15,8 +15,7 @@
                     <label for="estoqueProduto">Valor</label>
                     <input type="text" class="form-control" name="estoqueProduto" id="estoqueProduto" placeholder="Valor">
                     <label for="categoriaProduto">Categoria</label>
-                    <input type="text" class="form-control" name="categoriaProduto" id="categoriaProduto" value="{{}}" >
-
+                    <input type="text" class="form-control" name="categoriaProduto" id="categoriaProduto"  >
                 </div>
                 <button type="submit" class="btn btn-primary btn-sn">Salvar</button>
             </form>

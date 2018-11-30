@@ -7,7 +7,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="nomeCategoria">Nome da Categoria</label>
-                <input type="text" class="form-control" name="nomeCategoria" id="nomeCategoria" placeholder="Categoria" value="{{$cat->nome}}">
+                <input type="text" class="form-control" name="nomeCategoria" id="nomeCategoria" placeholder="Categoria" value="{{$cat->name}}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-sn">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sn">Cancelar</button>
