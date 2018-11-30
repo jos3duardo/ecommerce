@@ -21,7 +21,11 @@
                       @foreach ($prods as $prod)
                           <tr>
                               <td>{{$prod->id}}</td>
-                              <td>{{$prod->nome}}</td>
+                              <td>{{$prod->name}}</td>
+                              <td>{{$prod->unidade}}</td>
+                              <td>{{$prod->estoque}}</td>
+                              <td>{{$prod->valor}}</td>
+                              <td>{{$prod->categoria->name}}</td>
                               <td>
                                   <a href="/product/edit/{{$prod->id}}" class="btn btn-sm btn-primary">Editar</a>
                                   <a href="/product/delete/{{$prod->id}}" class="btn btn-sm btn-danger">Apagar</a>

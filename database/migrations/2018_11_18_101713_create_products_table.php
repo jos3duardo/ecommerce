@@ -19,6 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('unidade');
             $table->integer('estoque');
             $table->float('valor');
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

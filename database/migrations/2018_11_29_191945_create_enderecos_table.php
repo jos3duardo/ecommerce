@@ -21,7 +21,7 @@ class CreateEnderecosTable extends Migration
             $table->string('rua');
             $table->integer('numero');
             $table->string('bairro');
-            $table->string('ciade');
+            $table->string('cidade');
             $table->string('uf');
             $table->string('cep');
             
