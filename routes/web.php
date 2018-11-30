@@ -32,6 +32,9 @@ Route::post('/category', 'CategoryController@store');
 Route::get('/category/edit/{id}', 'CategoryController@edit');
 Route::post('/category/{id}', 'CategoryController@update');
 Route::get('/category/delete/{id}', 'CategoryController@destroy');
+//Json com todas as categorias
+Route::get('/categoryJson', 'CategoryController@categoryJson');
+
 
 Route::get('/calendar', 'CategoryController@calendar')->name('calendar');
 

@@ -31,6 +31,12 @@ class CategoryController extends Controller
         return view('calendar');
     }
 
+    public function categoryJson()
+    {
+        $cats = Category::with('produtos')->get();
+        return $cats->toJson();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
