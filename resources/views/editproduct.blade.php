@@ -15,7 +15,12 @@
                     <label for="valorProduto">Valor</label>
                     <input type="text" class="form-control" name="valorProduto" id="valorProduto" value="{{$prod->valor}}">
                     <label for="categoriaProduto">Categoria</label>
-                    <input type="text" class="form-control" name="categoriaProduto" id="categoriaProduto" value="{{$prod->categoria->name}}"    >
+                    <select class="form-control" name="categoriaProduto" id="categoriaProduto">
+                        <option value="{{$prod->categoria->id}}" >{{$prod->categoria->name}}</option>
+                        @foreach ($cats as $cat)
+                            <option value="{{$cat->id}}" >{{$cat->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sn">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sn">Cancelar</button>

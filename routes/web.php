@@ -43,6 +43,7 @@ Route::get('/product/new', 'ProductController@create');
 Route::post('/product', 'ProductController@store');
 // retorna uma view com o formulario de edição
 Route::get('/product/edit/{id}', 'ProductController@edit');
+//atualiza produto
 Route::post('/product/{id}', 'ProductController@update');
 Route::get('/product/delete/{id}', 'ProductController@destroy');
 

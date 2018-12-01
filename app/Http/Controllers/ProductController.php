@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -31,7 +32,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('newproduct');  
+        $cats = Category::all(); 
+        return view('newproduct', compact('cats'));  
     }
 
     /**
@@ -71,11 +73,12 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(product $product, $id)
-    {
+    {   
+         $cats = Category::all(); 
         //buscar o produto que vai ser editado
          $prod = Product::find($id);
          if(isset($prod)){
-             return view('editproduct', compact('prod'));
+             return view('editproduct', compact('prod', 'cats'));
          }
          return view('/produtct');
     }
@@ -89,7 +92,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, product $product, $id)
     {
-        //buscar a categoria que vai ser editada
+        //buscar o produto que vai ser editada
         $prod = Product::find($id);
 
         if(isset($prod)){
@@ -97,7 +100,7 @@ class ProductController extends Controller
             $prod->unidade = $request->input('unidadeProduto');
             $prod->estoque = $request->input('estoqueProduto');
             $prod->valor = $request->input('valorProduto');
-            //$prod->category_id = $request->input('categoriaProduto');
+            $prod->category_id = $request->input('categoriaProduto');
             $prod->save();
         }
         return redirect('/product');
