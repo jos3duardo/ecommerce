@@ -16,8 +16,10 @@
                     <input type="text" class="form-control" name="valorProduto" id="valorProduto" value="{{$prod->valor}}">
                     <label for="categoriaProduto">Categoria</label>
                     <select class="form-control" name="categoriaProduto" id="categoriaProduto">
+                        {{-- pega a categoria atual do produto --}}
                         <option value="{{$prod->categoria->id}}" >{{$prod->categoria->name}}</option>
                         @foreach ($cats as $cat)
+                        {{-- mostra as outras categorias --}}
                             <option value="{{$cat->id}}" >{{$cat->name}}</option>
                         @endforeach
                     </select>
