@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cats = Category::all();
+        $cats = Category::paginate(7);
         return view('/category', compact('cats'));
     }
 

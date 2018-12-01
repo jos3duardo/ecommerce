@@ -3,7 +3,8 @@
 <div class="content">
   <div class="card border">
       <div class="card-body">
-          <h5 class="card-title">Cadastro de Categorias</h5>
+          <h2>Lista de Categorias</h2>
+      
           @if (count($cats) > 0)
               <table class="table table-hover table-dark">
                   <thead>
@@ -27,6 +28,10 @@
                   </tbody>
               </table>
           @endif
+          <h5 class="card-title">Exibindo {{$cats->count()}} Categorias do total de {{$cats->total()}} ({{$cats->firstItem()}} a {{$cats->lastItem()}})</h5>
+            <div class="center">
+                {{$cats->links()}}
+            </div>
       </div>
       <div class="card-footer">
           <a href="/category/new" class="btn btn-sn btn-primary" role="button">Nova Categoria</a>

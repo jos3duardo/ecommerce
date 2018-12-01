@@ -36,6 +36,10 @@
               </table>
           @endif
       </div>
+      <h5 class="card-title">Exibindo {{$prods->count()}} Produtos do total de {{$prods->total()}} ({{$prods->firstItem()}} a {{$prods->lastItem()}})</h5>
+            <div class="center">
+                {{$prods->links()}}
+            </div>
       <div class="card-footer">
           <a href="/product/new" class="btn btn-sn btn-primary" role="button">Novo Produto</a>
       </div>
