@@ -25,10 +25,10 @@
                               <td>{{ $prod->unidade }}</td>
                               <td>{{ $prod->estoque }}</td>
                               <td>{{ $prod->valor }}</td>
-                              <td>{{ $prod->categoria['name'] }}</td>
+                              <td>{{ $prod->categoria->name }}</td>
                               <td>
-                                  <a href="/product/edit/{{ $prod->id }}" class="btn btn-sm btn-primary">Editar</a>
-                                  <a href="/product/delete/{{ $prod->id }}" class="btn btn-sm btn-danger">Apagar</a>
+                                <a href="/product/edit/{{ $prod->id }}" class="btn btn-sm btn-primary">Editar</a>
+                                <a href="/product/delete/{{ $prod->id }}" class="btn btn-sm btn-danger">Apagar</a>
                               </td>
                           </tr>
                       @endforeach

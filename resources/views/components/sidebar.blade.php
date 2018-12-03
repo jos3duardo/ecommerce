@@ -70,11 +70,12 @@
                 <i class="fa fa-address-book"></i>
                 <span>Painel</span>
                 <span class="pull-right-container">
-                  <span class="label label-warning pull-right">2</span>
+                  <span class="label label-warning pull-right">3</span>
                 </span>
               </a>
               <ul class="treeview-menu">
                 <li><a href="/"><i class="fa fa-user"></i> Usuarios</a></li>
+                <li><a href="/pessoa"><i class="glyphicon glyphicon-user"></i> Pessoas</a></li>
                 <li><a href="/professions"><i class="fa fa-id-card"></i> Profissões</a></li>
               </ul>
             </li>

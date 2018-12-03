@@ -17,7 +17,7 @@
                         id="salarioProfissao" placeholder="R$">
                 </div>
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-success    ">Salvar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
                 </div>
             </div>
             

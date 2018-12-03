@@ -64,7 +64,12 @@ class ProfessionController extends Controller
      */
     public function edit($id)
     {
-        //
+         //buscar a categoria que vai ser editada
+         $prof = Profession::find($id);
+         if(isset($prof)){
+             return view('editprofession', compact('prof'));
+         }
+         return view('/professions');
     }
 
     /**
@@ -76,7 +81,15 @@ class ProfessionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       //buscar a profissao que vai ser editada
+       $prof = Profession::find($id);
+
+       if(isset($prof)){
+        $prof->name = $request->input('nomeProfissao');
+        $prof->media_salaria = $request->input('salarioProfissao');
+        $prof->save();
+       }
+       return redirect('/professions');
     }
 
     /**
@@ -87,6 +100,11 @@ class ProfessionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //apaga uma categoria
+        $prof = Profession::find($id);
+        if(isset($prof)){
+            $prof->delete();
+        }
+       return redirect('/professions');
     }
 }

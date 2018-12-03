@@ -43,5 +43,17 @@ Route::post('/product/{id}', 'ProductController@update');
 Route::get('/product/delete/{id}', 'ProductController@destroy');
 
 //CRUD de  professions
-Route::get('/professions', 'ProfessionController@index'); 
+Route::get('/professions', 'ProfessionController@index');
+Route::get('/professions/edit/{id}', 'ProfessionController@edit');
 Route::post('/professions', 'ProfessionController@store');
+Route::post('/professions/{id}', 'ProfessionController@update');
+Route::get('/professions/delete/{id}', 'ProfessionController@destroy');
+
+
+// crud pessoa
+Route::get('/pessoa', 'PessoaController@index');
+Route::get('/pessoa/new', 'PessoaController@create');
+Route::get('/pessoa/edit/{id}', 'PessoaController@edit');
+Route::post('/pessoa', 'PessoaController@store');
+Route::post('/pessoa/{id}', 'PessoaController@update');
+Route::get('/pessoa/delete/{id}', 'PessoaController@destroy');

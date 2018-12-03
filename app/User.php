@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
 
     public function endereco(){
-    //busca um endereco dentra da tabela endereço
+    //busca um endereco dentro da tabela endereço
     //busca automaticamente um usuario com o id
     //mostra somente um usuario por endereço
     return $this->hasOne('App\Endereco');
