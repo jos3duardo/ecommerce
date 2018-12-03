@@ -38,6 +38,20 @@
               </ul>
             </li> -->
             <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-barcode"></i>
+                  <span>Produtos</span>
+                  <span class="pull-right-container">
+                    <span class="label label-success pull-right">2</span>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                   
+                  <li><a href="/category"><i class="glyphicon glyphicon-list-alt"></i> Categorias</a></li>
+                  <li><a href="/product"><i class="fa fa-shopping-basket"></i> Produtos</a></li>
+                </ul>
+              </li>
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>Pedidos</span>
@@ -46,10 +60,22 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Pedidos</a></li>
-                <li><a href="/category"><i class="fa fa-circle-o"></i> Categorias</a></li>
-                <li><a href="/product"><i class="fa fa-circle-o"></i> Produtos</a></li>
-                <li><a href="/calendar"><i class="fa fa-circle-o"></i> Calendario</a></li>
+               
+                <li><a href="#"><i class="glyphicon glyphicon-list"></i> Pedidos</a></li>
+                <li><a href="/calendar"><i class="fa fa-calendar"></i> Calendario</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-address-book"></i>
+                <span>Painel</span>
+                <span class="pull-right-container">
+                  <span class="label label-warning pull-right">2</span>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/"><i class="fa fa-user"></i> Usuarios</a></li>
+                <li><a href="/professions"><i class="fa fa-id-card"></i> Profissões</a></li>
               </ul>
             </li>
             

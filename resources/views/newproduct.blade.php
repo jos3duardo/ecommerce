@@ -1,6 +1,8 @@
 @extends('layouts.painel')
 @section('content')
 <div class="content">
+        <h3>Cadastrar Profissão</h3>
+
     <div class="card border">
         <div class="card-body">
             <form action="/product" method="POST">
@@ -26,5 +28,7 @@
             </form>
         </div>
     </div>
+
+    
 </div>      
 @endsection

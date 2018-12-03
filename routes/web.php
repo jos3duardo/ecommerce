@@ -13,20 +13,13 @@
 use App\User;
 use App\Endereco;
 
-
-Route::get('/','HomeController@index')->name('home');   
-
 Auth::routes();
-
-Route::get('/painel', 'HomeController@index')->name('home');
+Route::get('/','HomeController@index');   
+Route::get('/painel', 'HomeController@index');
 Route::get('/teste', 'HomeController@teste');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/home', 'HomeController@index');
+// rota Category
 Route::get('/category', 'CategoryController@index')->name('category');
-Route::get('/category/new', 'CategoryController@create');
 Route::post('/category', 'CategoryController@store');
 // retorna uma view com o formulario de edição
 Route::get('/category/edit/{id}', 'CategoryController@edit');
@@ -35,6 +28,8 @@ Route::get('/category/delete/{id}', 'CategoryController@destroy');
 //Json com todas as categorias
 Route::get('/categoryJson', 'CategoryController@categoryJson');
 
+//teste de retorno para uma view de calendar
+//sera implementado futuramente
 Route::get('/calendar', 'CategoryController@calendar')->name('calendar');
 
 //CRUD produtos
@@ -47,34 +42,6 @@ Route::get('/product/edit/{id}', 'ProductController@edit');
 Route::post('/product/{id}', 'ProductController@update');
 Route::get('/product/delete/{id}', 'ProductController@destroy');
 
-
-
-//listando usuarios por endereço
-Route::get('/users', function (){
-    $users = User::all();
-    foreach ($users as $u) {
-        echo "<p> ID: ".$u->id."</p>";
-        echo "<p> Nome: ".$u->name."</p>";
-        echo "<p> Email: ".$u->email."</p>";
-        echo "<p> Rua: ".$u->endereco->rua."</p>";
-        echo "<p> Numero: ".$u->endereco->numero."</p>";
-        echo "<p> Bairro: ".$u->endereco->bairro."</p>";
-        echo "<p> Cidade: ".$u->endereco->cidade."</p>";
-        echo "<p> UF: ".$u->endereco->uf."</p>";
-        echo "<p> CEP: ".$u->endereco->cep."</p>";
-
-    }
-});
-
-Route::get('/enderecos', function (){
-    $ends = Endereco::all();
-    foreach ($ends as $end) {
-        echo "<p> ID do Cliente: ".$end->user_id."</p>";
-        echo "<p> Rua: ".$end->rua."</p>";
-        echo "<p> Numero: ".$end->numero."</p>";
-        echo "<p> Bairro: ".$end->bairro."</p>";
-        echo "<p> Cidade: ".$end->cidade."</p>";
-        echo "<p> UF: ".$end->uf."</p>";
-        echo "<p> CEP: ".$end->cep."</p>";
-    }
-});
+//CRUD de  professions
+Route::get('/professions', 'ProfessionController@index'); 
+Route::post('/professions', 'ProfessionController@store');

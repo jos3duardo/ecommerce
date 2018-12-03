@@ -15,6 +15,8 @@ class CreateProfessionsTable extends Migration
     {
         Schema::create('professions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->double('media_salaria');
             $table->timestamps();
         });
     }
