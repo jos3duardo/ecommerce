@@ -11,6 +11,7 @@ class ProfessionSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('professions')->insert(['name' => 'Padrao', 'media_salaria' => 0]);
         DB::table('professions')->insert(['name' => 'Programador', 'media_salaria' => 2500]);
         DB::table('professions')->insert(['name' => 'Vendedor', 'media_salaria' => 2500]);
         DB::table('professions')->insert(['name' => 'Gerente', 'media_salaria' => 2500]);

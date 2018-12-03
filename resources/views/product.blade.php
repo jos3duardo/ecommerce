@@ -5,7 +5,7 @@
       <div class="card-body">
           <h3 class="card-title">Lista de Produtos</h3>
           @if (count($prods) > 0)
-              <table class="table table-hover table-dark">
+              <table class="table table-hover panel">
                   <thead>
                       <tr>
                           <th>Código</th>

@@ -38,6 +38,18 @@
               </ul>
             </li> -->
             <li class="treeview">
+              <a href="#">
+                <i class="glyphicon glyphicon-shopping-cart"></i>
+                <span>Compras</span>
+                <span class="pull-right-container">
+                  <span class="label label-info pull-right">1</span>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i> Compras</a></li>
+              </ul>
+          </li>
+            <li class="treeview">
                 <a href="#">
                   <i class="fa fa-barcode"></i>
                   <span>Produtos</span>
@@ -46,11 +58,10 @@
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                   
                   <li><a href="/category"><i class="glyphicon glyphicon-list-alt"></i> Categorias</a></li>
                   <li><a href="/product"><i class="fa fa-shopping-basket"></i> Produtos</a></li>
                 </ul>
-              </li>
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>

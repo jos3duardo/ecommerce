@@ -13,7 +13,7 @@
                     <label for="estoqueProduto">Estoque</label>
                     <input type="text" class="form-control" name="estoqueProduto" id="estoqueProduto" value="{{$prod->estoque}}">
                     <label for="valorProduto">Valor</label>
-                    <input type="text" class="form-control" name="valorProduto" id="valorProduto" value="{{$prod->valor}}">
+                    <input type="number"  step="any" class="form-control" name="valorProduto" id="valorProduto" value="{{$prod->valor}}">
                     <label for="categoriaProduto">Categoria</label>
                     <select class="form-control" name="categoriaProduto" id="categoriaProduto">
                         {{-- pega a categoria atual do produto --}}

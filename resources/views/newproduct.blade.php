@@ -15,7 +15,7 @@
                     <label for="estoqueProduto">Estoque</label>
                     <input type="number" class="form-control" name="estoqueProduto" id="estoqueProduto" placeholder="Estoque">
                     <label for="valorProduto">Valor</label>
-                    <input type="number" class="form-control" name="valorProduto" id="valorProduto" placeholder="Valor">
+                    <input type="number"  step="any" class="form-control" name="valorProduto" id="valorProduto" placeholder="Valor">
                     <label for="categoriaProduto">Categoria</label>
                     <select class="form-control" name="categoriaProduto" id="categoriaProduto">
                         @foreach ($cats as $cat)

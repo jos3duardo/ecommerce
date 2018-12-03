@@ -5,7 +5,7 @@
       <div class="card-body">
           <h3 class="card-title">Lista de Pessoas</h3>
           @if (count($pessoas) > 0)
-              <table class="table table-hover table-dark">
+              <table class="table table-hover panel">
                   <thead>
                       <tr>
                           <th>Id</th>
@@ -24,7 +24,7 @@
                               <td>{{ $pessoa->id }}</td>
                               <td>{{ $pessoa->nome }}</td>
                               <td>R$ {{ $pessoa->salario }}</td>
-                              <td>{{ $pessoa->data_nascimento }}</td>
+                              <td>{{ date('d/m/Y', strtotime($pessoa->data_nascimento)) }}</td>
                               <td>{{ $pessoa->estado_civil }}</td>
                               <td>{{ ($pessoa->ativo)? "Ativo" : "Inativo" }}</td>
                               <td>{{ $pessoa->profissao->name }}</td>
@@ -43,7 +43,7 @@
                 {{$pessoas->links()}}
             </div>
       <div class="card-footer">
-          <a href="/pessoa/new" class="btn btn-sn btn-primary" role="button">Nova Pessoa</a>
+          <a href="/pessoa/new" class="btn btn-sn btn-primary" role="button">Cadastrar Pessoa</a>
       </div>
   </div>
 </div>
