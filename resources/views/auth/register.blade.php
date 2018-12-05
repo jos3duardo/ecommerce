@@ -8,7 +8,7 @@
             <a href="/"><b>SIS</b>COMPRAS</a>
         </div>
         <div class="register-box-body">
-          <p class="login-box-msg">Cadastro de Usuario</p>
+          <p class="login-box-msg">Cadastro de novo Usuario</p>
           <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form-group has-feedback">
@@ -23,11 +23,11 @@
                   placeholder="Nome de Usuario"
                 >
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                    @if ($errors->has('name'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
+                  @if ($errors->has('name'))
+                      <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('name') }}</strong>
+                      </span>
+                  @endif
             </div>
             <div class="form-group has-feedback">
               <input 

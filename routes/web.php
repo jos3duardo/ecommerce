@@ -57,3 +57,6 @@ Route::get('/pessoa/edit/{id}', 'PessoaController@edit');
 Route::post('/pessoa', 'PessoaController@store');
 Route::post('/pessoa/{id}', 'PessoaController@update');
 Route::get('/pessoa/delete/{id}', 'PessoaController@destroy');
+
+// CRUD USERS
+Route::get('/user' ,'UserController@index');

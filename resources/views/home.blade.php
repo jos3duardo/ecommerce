@@ -19,12 +19,7 @@
                                     <th>id</th>
                                     <th>Nome</th>
                                     <th> Email </th>
-                                    <th> Rua</th>
-                                    <th> Numero</th>
-                                    <th> Bairro</th>
-                                    <th> Cidade</th>
-                                    <th> UF</th>
-                                    <th> CEP</th>
+                                    
                                     <th> Ações</th>
                                 </tr>
                             </thead>
@@ -34,12 +29,7 @@
                                     <td>{{ $u->id }}</td>
                                     <td>{{ $u->name }}</td>
                                     <th>{{ $u->email }}</th>
-                                    <th>{{ $u->endereco->rua }}</th>
-                                    <th>{{ $u->endereco->numero}}</th>
-                                    <th>{{ $u->endereco->bairro}}</th>
-                                    <th>{{ $u->endereco->cidade}}</th>
-                                    <th>{{ $u->endereco->uf}}</th>
-                                    <th>{{ $u->endereco->cep}}</th>
+                                   
                                     <td>
                                         <a href="/editar/{{$u->id}}" class="btn btn-sm btn-info">Editar</a>
                                         <a href="/deletar/{{$u->id}}" class="btn btn-sm btn-danger">Deletar</a>

@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use App\Profession;
 class ProfessionController extends Controller
 {
+    
+    //exige que o usuario esteja autenticado para acessar o controller
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
