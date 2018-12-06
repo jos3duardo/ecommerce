@@ -46,7 +46,9 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="glyphicon glyphicon-credit-card"></i> Compras</a></li>
+                <li><a href="/carrinho"><i class="glyphicon glyphicon-shopping-cart"></i> Relatório de Vendas</a></li>
+                <li><a href="/compras"><i class="glyphicon glyphicon-credit-card"></i> Compras</a></li>
+                <li><a href="/carrinho"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho</a></li>
               </ul>
           </li>
             <li class="treeview">

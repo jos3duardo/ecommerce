@@ -59,7 +59,7 @@
                     <!-- /.social-auth-links -->
                 
                     <a href="{{ route('password.request') }}">Recuperar senha</a><br>
-                    <a href="{{ route('register') }}" class="text-center">Cadastrar-se no Sistema</a>
+                    <!-- <a href="{{ route('register') }}" class="text-center">Cadastrar-se no Sistema</a> -->
                 
                 </div>
                 <!-- /.login-box-body -->

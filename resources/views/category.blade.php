@@ -20,7 +20,7 @@
       <div class="card-body">
           <h3>Lista de Categorias</h3>
           @if (count($cats) > 0)
-              <table class="table table-hover panel">
+              <table class="table table-hover panel panel-primary">
                   <thead>
                       <tr>
                           <th>Id</th>

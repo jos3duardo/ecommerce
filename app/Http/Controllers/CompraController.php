@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Compra;
 class CompraController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class CompraController extends Controller
      */
     public function index()
     {
-        //
+        $compras = Compra::paginate(5);
+
+        return view('compras', compact('compras'));
     }
 
     /**

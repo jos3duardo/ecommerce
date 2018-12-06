@@ -29,6 +29,7 @@
                               <td>
                                 <a href="/product/edit/{{ $prod->id }}" class="btn btn-sm btn-primary">Editar</a>
                                 <a href="/product/delete/{{ $prod->id }}" class="btn btn-sm btn-danger">Apagar</a>
+                                <a href="/carrinho/comprar/{{ $prod->id }}" class="btn btn-sm btn-warning">comprar</a>
                               </td>
                           </tr>
                       @endforeach

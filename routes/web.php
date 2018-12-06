@@ -49,7 +49,6 @@ Route::post('/professions', 'ProfessionController@store');
 Route::post('/professions/{id}', 'ProfessionController@update');
 Route::get('/professions/delete/{id}', 'ProfessionController@destroy');
 
-
 // crud pessoa
 Route::get('/pessoa', 'PessoaController@index');
 Route::get('/pessoa/new', 'PessoaController@create');
@@ -60,3 +59,16 @@ Route::get('/pessoa/delete/{id}', 'PessoaController@destroy');
 
 // CRUD USERS
 Route::get('/user' ,'UserController@index');
+
+// COMPRAS
+Route::get('/compras', "CompraController@index");
+Route::get('/compras', "CompraController@index");
+
+// carrinho
+Route::get('/carrinho', "CarrinhoController@index");
+Route::get('/carrinho/comprar/{id}', "CarrinhoController@comprar");
+Route::get('/carrinho/limparCarrinho', "CarrinhoController@limparCarrinho");
+Route::get('/carrinho/{id}', "CarrinhoController@destroy");
+Route::get('/carrinho/up/{id}', "CarrinhoController@atualizaProduto");
+Route::get('/carrinho/finaliza/{id}', "CarrinhoController@finalizaPedido");
+
