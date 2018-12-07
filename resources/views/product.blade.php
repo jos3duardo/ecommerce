@@ -27,9 +27,12 @@
                               <td>{{ $prod->valor }}</td>
                               <td>{{ $prod->categoria->name }}</td>
                               <td>
+                                @if( Auth::user()->role == "Admin")
                                 <a href="/product/edit/{{ $prod->id }}" class="btn btn-sm btn-primary">Editar</a>
                                 <a href="/product/delete/{{ $prod->id }}" class="btn btn-sm btn-danger">Apagar</a>
+                                @else
                                 <a href="/carrinho/comprar/{{ $prod->id }}" class="btn btn-sm btn-warning">comprar</a>
+                                @endif
                               </td>
                           </tr>
                       @endforeach

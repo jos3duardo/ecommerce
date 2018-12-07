@@ -14,7 +14,10 @@ use App\User;
 use App\Endereco;
 
 Auth::routes();
-Route::get('/','HomeController@index');   
+Route::get('/','ProductController@index'); 
+
+
+
 Route::get('/painel', 'HomeController@index');
 Route::get('/teste', 'HomeController@teste');
 Route::get('/home', 'HomeController@index');
@@ -71,4 +74,5 @@ Route::get('/carrinho/limparCarrinho', "CarrinhoController@limparCarrinho");
 Route::get('/carrinho/{id}', "CarrinhoController@destroy");
 Route::get('/carrinho/up/{id}', "CarrinhoController@atualizaProduto");
 Route::get('/carrinho/finaliza/{id}', "CarrinhoController@finalizaPedido");
+Route::get('/admin/carrinhoall', "CarrinhoController@produtosCarrinho");
 

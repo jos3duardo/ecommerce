@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use App\Carrinho;
@@ -11,7 +12,7 @@ use App\CompraProduto;
 
 class CarrinhoController extends Controller
 {
-    //exige que o usuario esteja autenticado para acessar o controller
+    //exige que o usuario esteja logado para acessar o controller
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,7 +24,17 @@ class CarrinhoController extends Controller
      */
     public function index()
     {
-        $carrinhos = Carrinho::paginate(15);
+        // $carrinhos = Carrinho::paginate(15);
+
+        // este metodo retorna somente os pedidos do carrinho do usuario que esta logado
+        $carrinhos = Carrinho::where([
+            'user_id' => Auth::id()//informa o id do usuario logado
+        ])->get();
+
+
+        // dd([
+        //     $carrinhos
+        // ]);
 
         return view('carrinho', compact('carrinhos'));
     }
@@ -104,7 +115,9 @@ class CarrinhoController extends Controller
         $carrinho = new Carrinho();
         $prod = Product::find($id);
         $carrinho->produto_id = $prod->id;
-        //$carrinho->quantidade = 1;
+        $carrinho->quantidade = 1;
+        $carrinho->user_id = Auth::user()->id;
+        
         $carrinho->save();
 
         return redirect('/carrinho');
@@ -151,6 +164,13 @@ class CarrinhoController extends Controller
         }
         $compraProduto->save();
         return redirect('/compras');
+    }
+
+
+    public function produtosCarrinho(){
+
+        $carrinhos = Carrinho::all();
+        return view('admin/carrinhoAll', compact('carrinhos'));
     }
     
 }
