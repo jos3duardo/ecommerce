@@ -45,7 +45,9 @@
                 {{$prods->links()}}
             </div>
       <div class="card-footer">
+      @if( Auth::user()->role == "Admin")
           <a href="/product/new" class="btn btn-sn btn-primary" role="button">Novo Produto</a>
+      @endif
       </div>
   </div>
 </div>
