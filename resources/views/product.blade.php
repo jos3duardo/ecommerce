@@ -8,7 +8,7 @@
               <table class="table table-hover panel">
                   <thead>
                       <tr>
-                          <th>Código</th>
+                          <th>Id</th>
                           <th>Nome</th>
                           <th>Unidade</th>
                           <th>Estoque</th>
@@ -24,7 +24,7 @@
                               <td>{{ $prod->name }}</td>
                               <td>{{ $prod->unidade }}</td>
                               <td>{{ $prod->estoque }}</td>
-                              <td>{{ $prod->valor }}</td>
+                              <td>R$ {{ number_format( $prod->valor, 2 ,',','.') }}</td>
                               <td>{{ $prod->categoria->name }}</td>
                               <td>
                                 @if( Auth::user()->role == "Admin")
