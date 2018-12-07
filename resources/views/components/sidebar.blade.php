@@ -9,7 +9,7 @@
             </div>
             <div class="pull-left info">
               <p>{{Auth::user()->name}}</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i class="fa fa-circle text-success"></i> {{Auth::user()->role}}</a>
             </div>
           </div>
           <!-- search form -->
@@ -46,11 +46,11 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/carrinho"><i class="glyphicon glyphicon-shopping-cart"></i> Relatório de Vendas</a></li>
                 <li><a href="/compras"><i class="glyphicon glyphicon-credit-card"></i> Compras</a></li>
                 <li><a href="/carrinho"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho</a></li>
               </ul>
           </li>
+          @if( Auth::user()->role == "Admin")
             <li class="treeview">
                 <a href="#">
                   <i class="fa fa-barcode"></i>
@@ -74,11 +74,11 @@
               </a>
               <ul class="treeview-menu">
                
-                <li><a href="#"><i class="glyphicon glyphicon-list"></i> Pedidos</a></li>
+                <li><a href="/carrinhoall"><i class="glyphicon glyphicon-list"></i> Pedidos</a></li>
                 <li><a href="/calendar"><i class="fa fa-calendar"></i> Calendario</a></li>
               </ul>
             </li>
-            @if( Auth::user()->role == "Admin")
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-address-book"></i>
@@ -95,21 +95,8 @@
               </ul>
             </li>
             @endif
-            <!-- <li class="treeview">
-              <a href="#">
-                <i class="fa fa-pie-chart"></i>
-                <span>Graficos</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Morris</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Flot</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-              </ul>
-            </li> -->
+            
+            
           </ul>
         </section>
         <!-- /.sidebar -->

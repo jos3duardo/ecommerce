@@ -6,9 +6,6 @@
             <div class="col-md-12">
                 <h2>Carrinho de compras</h2>
                 <h3>Lista de produtos</h3>
-                {{
-                    dd($carrinhos)
-                }}
                 <table class="table table-bordered panel" id="tabelaclientes">
                     <thead>
                         <tr>

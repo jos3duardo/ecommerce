@@ -74,5 +74,5 @@ Route::get('/carrinho/limparCarrinho', "CarrinhoController@limparCarrinho");
 Route::get('/carrinho/{id}', "CarrinhoController@destroy");
 Route::get('/carrinho/up/{id}', "CarrinhoController@atualizaProduto");
 Route::get('/carrinho/finaliza/{id}', "CarrinhoController@finalizaPedido");
-Route::get('/admin/carrinhoall', "CarrinhoController@produtosCarrinho");
+Route::get('/carrinhoall', "CarrinhoController@produtosCarrinho");
 

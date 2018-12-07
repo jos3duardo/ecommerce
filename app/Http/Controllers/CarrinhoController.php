@@ -170,7 +170,7 @@ class CarrinhoController extends Controller
     public function produtosCarrinho(){
 
         $carrinhos = Carrinho::all();
-        return view('admin/carrinhoAll', compact('carrinhos'));
+        return view('carrinhoAll', compact('carrinhos'));
     }
     
 }

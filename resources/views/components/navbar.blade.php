@@ -12,10 +12,10 @@
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
             <li class="dropdown messages-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-envelope-o"></i>
                 <span class="label label-success">4</span>
-              </a>
+              </a> -->
               <ul class="dropdown-menu">
                 <li class="header">Você tem 4 mesagens</li>
                 <li>
@@ -41,10 +41,10 @@
             </li>
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
                 <span class="label label-warning">10</span>
-              </a>
+              </a> -->
               <ul class="dropdown-menu">
                 <li class="header">You have 10 notifications</li>
                 <li>
@@ -62,10 +62,10 @@
             </li>
             <!-- Tasks: style can be found in dropdown.less -->
             <li class="dropdown tasks-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
                 <span class="label label-danger">9</span>
-              </a>
+              </a> -->
               <ul class="dropdown-menu">
                 <li class="header">You have 9 tasks</li>
                 <li>
@@ -110,7 +110,7 @@
                   </p>
                 </li>
                 <!-- Menu Body -->
-                <li class="user-body">
+                <!-- <li class="user-body">
                   <div class="row">
                     <div class="col-xs-4 text-center">
                       <a href="#">Followers</a>
@@ -121,13 +121,13 @@
                     <div class="col-xs-4 text-center">
                       <a href="#">Friends</a>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- /.row -->
-                </li>
+                <!-- </li> -->
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
                   </div>
                   <div class="pull-right">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
