@@ -18,7 +18,7 @@
                     </thead>
                     <tbody>
                         <?php $total = 0 ?>
-                        @foreach ($carrinhos as $car)
+                        @foreach ($carrinhos as $key => $car)
                         <tr>
                             <td>{{ $car->produtos['name']}}</td>
                             <td>
