@@ -1,6 +1,9 @@
 @extends('layouts.painel')
 @section('content')
 <div class="content">
+
+    
+
   <div class="card border">
       <div class="card-body">
           <h3 class="card-title">Lista de Produtos</h3>

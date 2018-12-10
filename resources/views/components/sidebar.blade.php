@@ -74,7 +74,7 @@
               </a>
               <ul class="treeview-menu">
                
-                <li><a href="/carrinhoall"><i class="glyphicon glyphicon-list"></i> Pedidos</a></li>
+                <li><a href="/pedidos"><i class="glyphicon glyphicon-list"></i> Pedidos</a></li>
                 <li><a href="/calendar"><i class="fa fa-calendar"></i> Calendario</a></li>
               </ul>
             </li>
@@ -89,7 +89,7 @@
               </a>
               <ul class="treeview-menu">
               
-                <li><a href="/"><i class="fa fa-user"></i> Usuarios</a></li>
+                <li><a href="/painel"><i class="fa fa-user"></i> Usuarios</a></li>
                 <li><a href="/pessoa"><i class="glyphicon glyphicon-user"></i> Pessoas</a></li>
                 <li><a href="/professions"><i class="fa fa-id-card"></i> Profissões</a></li>
               </ul>

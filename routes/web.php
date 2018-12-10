@@ -20,7 +20,15 @@ Route::get('/','ProductController@index');
 
 Route::get('/painel', 'HomeController@index');
 Route::get('/teste', 'HomeController@teste');
+Route::get('/registro', 'HomeController@teste');
+Route::get('/users/new', 'HomeController@create');
+Route::get('/users/edit/{id}', 'HomeController@edit');
+Route::post('/users', 'HomeController@store');
+Route::post('/users/{id}', 'HomeController@update');
+Route::get('/users/delete/{id}', 'HomeController@destroy');
 Route::get('/home', 'HomeController@index');
+
+
 // rota Category
 Route::get('/category', 'CategoryController@index')->name('category');
 Route::post('/category', 'CategoryController@store');
@@ -35,15 +43,6 @@ Route::get('/categoryJson', 'CategoryController@categoryJson');
 //sera implementado futuramente
 Route::get('/calendar', 'CategoryController@calendar')->name('calendar');
 
-//CRUD produtos
-Route::get('/product', 'ProductController@index')->name('product');
-Route::get('/product/new', 'ProductController@create');
-Route::post('/product', 'ProductController@store');
-// retorna uma view com o formulario de edição
-Route::get('/product/edit/{id}', 'ProductController@edit');
-//atualiza produto
-Route::post('/product/{id}', 'ProductController@update');
-Route::get('/product/delete/{id}', 'ProductController@destroy');
 
 //CRUD de  professions
 Route::get('/professions', 'ProfessionController@index');
@@ -67,12 +66,29 @@ Route::get('/user' ,'UserController@index');
 Route::get('/compras', "CompraController@index");
 Route::get('/compras', "CompraController@index");
 
+//CRUD produtos
+Route::get('/product', 'ProductController@index')->name('product');
+Route::get('/product/new', 'ProductController@create');
+Route::post('/product', 'ProductController@store');
+// retorna uma view com o formulario de edição
+Route::get('/product/edit/{id}', 'ProductController@edit');
+//atualiza produto
+Route::post('/product/{id}', 'ProductController@update');
+Route::get('/product/delete/{id}', 'ProductController@destroy');
+
+
 // carrinho
 Route::get('/carrinho', "CarrinhoController@index");
-Route::get('/carrinho/comprar/{id}', "CarrinhoController@comprar");
+Route::get('/carrinho/comprar/{pessoa}/{id}', "CarrinhoController@comprar");
 Route::get('/carrinho/limparCarrinho', "CarrinhoController@limparCarrinho");
 Route::get('/carrinho/{id}', "CarrinhoController@destroy");
 Route::get('/carrinho/up/{id}', "CarrinhoController@atualizaProduto");
 Route::get('/carrinho/finaliza/{id}', "CarrinhoController@finalizaPedido");
-Route::get('/carrinhoall', "CarrinhoController@produtosCarrinho");
+Route::get('/pedidos', "CarrinhoController@produtosCarrinho");
+// criando um carrinho para um usuario
+//a partir daqui o sistema começa a funcionar como um caixa
+Route::get('/carrinho/edit/{id}', 'CarrinhoController@edit');
+// Route::get('/userCarrinho/{id}', 'CarrinhoController@carrinhoCliente');
+Route::post('/userCarrinho', 'CarrinhoController@criarCarrinho');
+Route::post('/addprodutocarrinho/{id}', 'CarrinhoController@addprodutocarrinho');
 

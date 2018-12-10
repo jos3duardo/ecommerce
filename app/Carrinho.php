@@ -13,4 +13,7 @@ class Carrinho extends Model
     public function usuario(){
         return $this->belongsTo('App\User', 'user_id');
     }
+    public function pessoa(){
+        return $this->belongsTo('App\Pessoa', 'pessoa_id');
+    }
 }

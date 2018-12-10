@@ -8,7 +8,7 @@ use App\Carrinho;
 use App\Product;
 use App\Compra;
 use App\CompraProduto;
-
+use App\Pessoa;
 
 class CarrinhoController extends Controller
 {
@@ -30,12 +30,6 @@ class CarrinhoController extends Controller
         $carrinhos = Carrinho::where([
             'user_id' => Auth::id()//informa o id do usuario logado
         ])->get();
-
-
-        // dd([
-        //     $carrinhos
-        // ]);
-
         return view('carrinho', compact('carrinhos'));
     }
 
@@ -47,6 +41,8 @@ class CarrinhoController extends Controller
     public function create()
     {
         //
+        $carrinhos = Carrinho::all();
+        return view('newcarrinho', compact('carrinhos')); 
     }
 
     /**
@@ -57,9 +53,11 @@ class CarrinhoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carrinho = new Carrinho();
+        $carrinho->user_id = $request->input('nomePessoa');
+        $carrinho->save();
+        return redirect('/pedidos');
     }
-
     /**
      * Display the specified resource.
      *
@@ -79,7 +77,14 @@ class CarrinhoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produtos = Product::all();
+        //buscar a categoria que vai ser editada
+        $carrinho = Carrinho::find($id);
+       
+        if(isset($carrinho)){
+            return view('editcarrinho', compact('carrinho','produtos'));
+        }
+        return view('/pedidos');
     }
 
     /**
@@ -110,13 +115,14 @@ class CarrinhoController extends Controller
        return redirect('/carrinho');
     }
 
-    public function comprar(Request $request, $id) {
+    public function comprar(Request $request, $pessoa, $id) {
 
         $carrinho = new Carrinho();
         $prod = Product::find($id);
         $carrinho->produto_id = $prod->id;
-        $carrinho->quantidade = 1;
+        // $carrinho->quantidade = 1;
         $carrinho->user_id = Auth::user()->id;
+        $carrinho->pessoa_id = $pessoa;
         
         $carrinho->save();
 
@@ -166,11 +172,35 @@ class CarrinhoController extends Controller
         return redirect('/compras');
     }
 
-
+    // indexCarrinho da area administrativa
     public function produtosCarrinho(){
 
-        $carrinhos = Carrinho::all();
-        return view('carrinhoAll', compact('carrinhos'));
+        $pessoas = Pessoa::all();
+        $carrinhos = Carrinho::all();   
+
+        return view('pedidos', compact('carrinhos','pessoas'));
+    }
+    public function criarCarrinho(Request $request){
+
+        $carrinho = new Carrinho();
+        $carrinho->user_id = Auth::user()->id;
+        $carrinho->pessoa_id = $request->input('nomePessoa');
+        $carrinho->save();
+        return redirect('/pedidos');
+    }
+
+    public function addprodutocarrinho(Request $request, $id){
+        
+        //recebe os dados do formulario
+        $carrinho = Carrinho::find($id);  
+        $carrinho->produto_id = $request->input('nomeProduto');
+        $carrinho->save();
+        
+
+        $carrinhos = Carrinho::where([
+            'user_id' =>$carrinho->pessoa->id//informa o id do usuario logado
+        ])->get();
+        return view('carrinho/edit/$id', compact('carrinhos'));
     }
     
 }

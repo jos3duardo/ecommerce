@@ -16,9 +16,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/personalizado.css')}}">
-    <link rel="stylesheet" href="{{asset('css/personalizado.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     
     <script src="{{asset('js/personalizado.js')}}"></script>
+    <script src="{{asset('js/bootstrap.js')}}"></script>
 
     <link rel="stylesheet" href="{{asset('fullcalendar.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/fullcalendar.print.min.css')}}" media="print">
