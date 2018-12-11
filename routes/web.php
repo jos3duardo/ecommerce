@@ -14,7 +14,7 @@ use App\User;
 use App\Endereco;
 
 Auth::routes();
-Route::get('/','ProductController@index'); 
+Route::get('/','CarrinhoController@produtosCarrinho'); 
 
 
 
@@ -79,7 +79,6 @@ Route::get('/product/delete/{id}', 'ProductController@destroy');
 
 // carrinho
 Route::get('/carrinho', "CarrinhoController@index");
-Route::get('/carrinho/comprar/{pessoa}/{id}', "CarrinhoController@comprar");
 Route::get('/carrinho/limparCarrinho', "CarrinhoController@limparCarrinho");
 Route::get('/carrinho/{id}', "CarrinhoController@destroy");
 Route::get('/carrinho/up/{id}', "CarrinhoController@atualizaProduto");
@@ -92,3 +91,17 @@ Route::get('/carrinho/edit/{id}', 'CarrinhoController@edit');
 Route::post('/userCarrinho', 'CarrinhoController@criarCarrinho');
 Route::post('/addprodutocarrinho/{id}', 'CarrinhoController@addprodutocarrinho');
 
+
+// pedidos
+Route::get('/pedidos/edit/{id}', 'CarrinhoController@edit');
+// traz uma view com o pedido e os produtos do pedido
+Route::get('/carrinho/{carrinho}/{produto}', "CarrinhoController@comprar");
+// add um item ao pedido ja criado
+Route::post('/carrinho/add/{carrinho}', 'CarrinhoController@carrinhoAdd');
+// apaga um item do pedido em andamento
+Route::get('/carrinho/delete/{carrinho}/{id}', 'CarrinhoController@apagaItemPedido');
+// finalizando um pedido
+Route::get('/finaliza/carrinho/{id}', 'CarrinhoController@finalizaPedido');
+// cria um novo carrinho
+Route::post('/userCarrinho', 'CarrinhoController@criarCarrinho');
+Route::post('/carrinho/add', 'CarrinhoController@criarCarrinho');

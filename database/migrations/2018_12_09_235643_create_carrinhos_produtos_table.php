@@ -22,6 +22,7 @@ class CreateCarrinhosProdutosTable extends Migration
             $table->integer('produto_id')->unsigned()->nullable();
             $table->foreign('produto_id')->references('id')->on('products');
             $table->integer('quantidade');
+            $table->boolean('status');
             $table->timestamps();
         });
     }   

@@ -16,4 +16,7 @@ class Carrinho extends Model
     public function pessoa(){
         return $this->belongsTo('App\Pessoa', 'pessoa_id');
     }
+    public function produtosCarrinho(){
+        return $this->belongsTo('App\ProdutosCarrinho', 'produto_id');
+    }
 }

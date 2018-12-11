@@ -75,7 +75,7 @@
               <ul class="treeview-menu">
                
                 <li><a href="/pedidos"><i class="glyphicon glyphicon-list"></i> Pedidos</a></li>
-                <li><a href="/calendar"><i class="fa fa-calendar"></i> Calendario</a></li>
+                {{-- <li><a href="/calendar"><i class="fa fa-calendar"></i> Calendario</a></li> --}}
               </ul>
             </li>
 

@@ -17,11 +17,13 @@
                     <label for="valorProduto">Valor</label>
                     <input type="number"  step="any" class="form-control" name="valorProduto" id="valorProduto" placeholder="Valor">
                     <label for="categoriaProduto">Categoria</label>
+                    
                     <select class="form-control" name="categoriaProduto" id="categoriaProduto">
                         @foreach ($cats as $cat)
                             <option value="{{$cat->id}}" >{{$cat->name}}</option>
                         @endforeach
                     </select>
+                    
                 </div>
                 <button type="submit" class="btn btn-primary btn-sn">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sn">Cancelar</button>

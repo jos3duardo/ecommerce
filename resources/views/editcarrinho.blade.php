@@ -12,7 +12,7 @@
                     <h3>Número do pedido: {{$carrinho->id}}</h3>
                 </div>
                 <div class="col-md-4">
-                    <h3>Data do pedido: {{$carrinho->created_at->format('d/m/Y')}}</h3>
+                    <h3>Data: {{$carrinho->created_at->format('d/m/Y')}}</h3>
                 </div>
             </div>
         </div>
